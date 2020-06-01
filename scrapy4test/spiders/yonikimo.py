@@ -10,7 +10,6 @@ class YonikimoSpider(scrapy.Spider):
     def parse(self, response):
         for story in response.xpath('//*[@id="top"]').xpath('//table/tr'):
             yield{
-                '//*[@id="top"]/table/tbody/tr[5]/td[2]/a'
                 'no': story.xpath('td[1]/text()').extract(),
                 'title': story.xpath('td[2]/a/text()').extract(),  
                 'url': story.xpath('td[2]/a/@href').extract(),  
