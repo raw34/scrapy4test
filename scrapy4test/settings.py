@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'scrapy4test.spiders'
 #USER_AGENT = 'scrapy4test (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -64,9 +64,13 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
+ITEM_PIPELINES = {
+#    'scrapy.pipelines.files.FilesPipeline':1,
+   'scrapy4test.pipelines.MyFilesPipeline': 1,
 #    'scrapy4test.pipelines.Scrapy4TestPipeline': 300,
-#}
+}
+
+FILES_STORE = 'scrapy4test/files'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
