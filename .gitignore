@@ -4,3 +4,8 @@
 .vscode/
 __pycache__
 files
+build
+project.egg-info
+*.egg
+*.pid
+setup*.py
